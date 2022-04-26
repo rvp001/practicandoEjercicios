@@ -1,0 +1,77 @@
+body {
+  height: 100vh;
+  color: hsla(0deg, 0%, 100%, 0.75);
+  background-color: hsl(233deg, 47%, 7%);
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+main {
+  width: 90%;
+  max-width: 1300px;
+  background-color: hsl(244deg, 38%, 16%);
+  border-radius: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+main .imagen-desktop {
+  display: none;
+}
+@media (min-width: 1000px) {
+  main {
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    max-height: 450px;
+  }
+  main .imagen-movil {
+    display: none;
+  }
+  main .imagen-desktop {
+    display: inline;
+  }
+}
+main .imagen-principal {
+  background-color: hsl(265deg, 100%, 22%);
+  width: 100%;
+}
+main img {
+  opacity: 0.7;
+  width: 100%;
+  object-fit: cover;
+}
+@media (min-width: 1000px) {
+  main img {
+    height: 100%;
+  }
+}
+main .art {
+  margin-block: 50px;
+}
+main h1, main h2 {
+  color: hsl(0deg, 0%, 100%);
+  margin-inline: 5vw;
+}
+main h1 span, main h2 span {
+  color: hsl(277deg, 64%, 61%);
+}
+main .text {
+  margin: 2vw 5vw;
+}
+main .info * {
+  margin-top: 10px;
+  padding-block: 2px;
+}
+main .info * p {
+  font-family: "Lexend Deca", sans-serif;
+}
+@media (min-width: 1000px) {
+  main .info {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+/*# sourceMappingURL=estructure.css.map */

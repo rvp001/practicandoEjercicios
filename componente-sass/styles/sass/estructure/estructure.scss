@@ -1,0 +1,89 @@
+@use "../mixins/mixins" as mix;
+
+@use "../variables-sass/variables" as *;
+
+
+
+body{
+    height: 100vh ;
+    color: $color-texto;
+    background-color: $fondo-principal;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    display: grid;
+    place-items: center;    
+
+}
+main{
+    
+    @include mix.contain;
+
+    .imagen-desktop{
+        display: none;
+    }
+
+    @media (min-width: 1000px){
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        max-height: 450px;
+
+        .imagen-movil{
+            display: none;
+        }
+        .imagen-desktop{
+            display:inline;
+        }
+       
+    }
+
+    .imagen-principal{
+        background-color: hsl(265, 100%, 22%);
+        width: 100%;
+
+        
+    }
+    img{
+        opacity: .7;
+        width: 100%;
+        object-fit: cover;
+        
+        @media (min-width: 1000px){
+            height: 100%;
+
+    
+        }
+    }
+
+    .art{
+        margin-block: 50px;
+        
+    }
+
+    h1, h2{
+        color: $color-titulo;
+        margin-inline: 5vw;
+        span{
+            color: $lila-suave;
+        }
+    }
+    .text{
+        margin: 2vw 5vw;
+    }
+    .info *{
+        margin-top: 10px;
+       padding-block: 2px;
+
+       p{
+        font-family: 'Lexend Deca', sans-serif;
+       }
+
+    }
+    @media (min-width:1000px){
+        .info{
+            display: flex;
+            justify-content: space-around;
+        }
+        
+    }
+
+}

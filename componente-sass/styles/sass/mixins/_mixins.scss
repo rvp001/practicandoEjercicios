@@ -1,0 +1,14 @@
+// @use "../variables-sass/variables";
+
+$fondo-tarjeta:hsl(244, 38%, 16%);
+
+@mixin contain {
+    width: 90%;
+    max-width: 1300px;
+    background-color: $fondo-tarjeta;
+    border-radius: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    
+}
