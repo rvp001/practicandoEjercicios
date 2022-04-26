@@ -1,8 +1,9 @@
 // @use "../variables-sass/variables";
+@use "../variables-sass/variables" as *;
 
-$fondo-tarjeta:hsl(244, 38%, 16%);
 
-@mixin contain {
+
+@mixin prueba {
     width: 90%;
     max-width: 1300px;
     background-color: $fondo-tarjeta;

@@ -5,18 +5,19 @@
 
 
 body{
-    height: 100vh ;
+    min-height: 100vh ;
     color: $color-texto;
     background-color: $fondo-principal;
     text-align: center;
     font-family: 'Inter', sans-serif;
     display: grid;
-    place-items: center;    
+    place-items: center;
+    font-size: $letra-cuerpo;
 
 }
 main{
     
-    @include mix.contain;
+    @include mix.prueba;
 
     .imagen-desktop{
         display: none;

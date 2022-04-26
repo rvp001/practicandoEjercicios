@@ -73,13 +73,14 @@ select {
   }
 }
 body {
-  height: 100vh;
+  min-height: 100vh;
   color: hsla(0deg, 0%, 100%, 0.75);
   background-color: hsl(233deg, 47%, 7%);
   text-align: center;
   font-family: "Inter", sans-serif;
   display: grid;
   place-items: center;
+  font-size: 15px;
 }
 
 main {
