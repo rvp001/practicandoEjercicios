@@ -1,0 +1,14 @@
+div{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3vh auto;
+
+}
+span{
+    line-height: 5px;
+}
+
+div *:nth-child(100n){
+    background-color: black;
+}

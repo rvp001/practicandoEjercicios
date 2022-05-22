@@ -14,19 +14,20 @@
 </head>
 <body>
     <header class="bg-primary">
-        <div class="container p-3">
-            <div class="row text-center g-2 border border-1">
+        <div class="container text-center p-3">
+            <div class=" row border border-1">
                 <div class="border border-1"><img src="./enunciado/logo-codehouse.svg" width="30px"  alt="logo"></div>
                 
-                <nav class="d-flex g-2">
-                    <a class="text-white text-decoration-none" href="#">Inicio</a>
-                    <a class="text-white text-decoration-none" href="#">Nosotros</a>
-                    <a class="text-white text-decoration-none" href="#">Blog</a>
-                    <a class="text-white text-decoration-none" href="#">Contacto</a>
+                <!-- aqui los a no necesitan text-decoration-none, porque tenemos el nav-link -->
+                <nav class="nav">
+                    <a class="nav-link text-black fw-bold text-decoration-none p-3" href="#">Nosotros</a>
+                    <a class="nav-link text-black fw-bold text-decoration-none p-3" href="#">Inicio</a>
+                    <a class="nav-link text-black fw-bold text-decoration-none p-3" href="#">Blog</a>
+                    <a class="nav-link text-black fw-bold text-decoration-none p-3" href="#">Contacto</a>
                 </nav>
-                <div>
-                    <input class="" type="search" placeholder="Texto a buscar...">
-                    <button class="btn">Buscar</button>
+                <div class="d-flex">
+                    <input class="form-control" type="search" placeholder="Texto a buscar...">
+                    <button class="btn btn-warning border border-0 rounded-0">Buscar</button>
                 </div>
             </div>
 

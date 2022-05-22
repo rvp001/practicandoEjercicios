@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://ivan-luengo.com/wp-content/uploads/2020/03/cropped-favicon-ivan_luengo-32x32.png">
+  <link rel="stylesheet" href="./src/styles/sass/style.scss">
+  <title>Lista de Tareas 3.0</title>
+</head>
+
+<body>
+  <div class="background position-absolute w-100 top-0 start-0"></div>
+
+  <div class="col-7 mx-auto mt-5">
+    <h1 class="text-white fs-4 ">TO-DO</h1>
+    
+    <input class="inputTask form-control" placeholder="Nueva tarea..." type="text">
+    <div class="div-error position-absolute px-2 d-none text-warning">Escribe una tarea</div>
+    <ul class="toDoList list-unstyled mt-4 mb-1">
+      <!-- <li class="toDo px-3 py-2 bg-white rounded d-flex shadow border">
+        <i class="icon bi bi-check-circle text-success me-2"></i>
+        Sacar a las perras 🐕
+        <i class="icon ms-auto bi bi-x-lg"></i>
+      </li>
+      <li class="toDo px-3 py-2 bg-white rounded d-flex shadow border">
+        <i class="icon bi bi-check-circle text-success me-2"></i>
+        Sacar a las perras 🐕
+        <i class="icon ms-auto bi bi-x-lg"></i>
+      </li>
+      <li class="toDo px-3 py-2 bg-white rounded d-flex shadow border">
+        <i class="icon bi bi-check-circle text-success me-2"></i>
+        Sacar a las perras 🐕
+        <i class="icon ms-auto bi bi-x-lg"></i>
+      </li> -->
+    </ul>
+    <section class="filters bg-white px-3 py-2 rounded d-flex gap-2 shadow">
+      <span class="small text-light me-auto">0 tareas pendientes</span>
+      <span class="filter filterAll small text-light">All</span>
+      <span class="filter filterActive small text-light">Active</span>
+      <span class="filter filterCompleted small text-light">Completed</span>
+      <span class="filter filterClear small text-light ms-auto">Clear</span>
+    </section>
+  </div>
+  <script src="./src/main.js" type="module"></script>
+</body>
+</html>
