@@ -24,9 +24,10 @@ class ToDoApp {
     getToDosLocalStorage () {
         this.allToDos = JSON.parse(localStorage.getItem("toDo")) || []
         console.log(this.allToDos)
-        console.log(this.allToDos)
 
-
+        // this.allToDos = this.allToDos.map((toDo) => {
+        //     return new ToDo(toDo.task, this.updateToDo, toDo.id, toDo.isCompleted)
+        //   })
     }
 
     updateToDosLocalStorage () {
@@ -58,22 +59,15 @@ class ToDoApp {
         this.filterCounter.innerHTML = `${arrayFiltered.length} tareas pendientes`
     }
 
-
     handleSubmitInput(e) {
         if(e.key!== "Enter") return
-
         if (this.isEmptyInput()) return
         
         this.newTask(this.inputTask.value)
-
         this.allToDos= [...this.allToDos, this.newToDo]
-        
-
         this.printToDos(this.allToDos)
-
         this.iconCheck = document.querySelector(".iconCheck")
         this.iconDelete = document.querySelector(".iconDelete")
-
         this.inputTask.value=""
     }
 
@@ -125,21 +119,19 @@ class ToDoApp {
 
         iconDelete.onclick = () => this.deleteTask(ToDo.id)
         iconCheck.onclick = () => this.changeCheck(ToDo)
-        iconUpdate.onclick = () => this.updateToDo(ToDo)
-     
+        iconUpdate.onclick = () => this.updateToDo(ToDo)     
     }
 
     changeCheck(Do){
         this.allToDos= this.allToDos.map(toDo => {
             if(Do.id === toDo.id) { return {...toDo, isCompleted:!Do.isCompleted}            
-            }else {return toDo}
-            
-        })
-       
+            }else {return toDo}            
+        })       
         this.printToDos()
     }
 
     updateToDo(Do){
+        console.log(Do)
         const modal = document.createElement("div")
         modal.className="modal fade"
         modal.setAttribute("tabindex", "-1")
@@ -153,29 +145,34 @@ class ToDoApp {
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <input type="text" value="${Do.task}" class="form-control" id="recipient-name">
+            <input type="text" value="${Do.task}" class="inputModal form-control" id="recipient-name">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Guardar cambios</button>
+            <button type="button" class="btnSave btn btn-primary">Guardar cambios</button>
           </div>
         </div>
       </div>`
-      console.log("hola")
-
+      const inputModal = modal.querySelector(".inputModal")
       const myModal = new bootstrap.Modal(modal)
       myModal.show()
-
+      const btnSave = modal.querySelector(".btnSave")
+      btnSave.onclick = () => {
+          this.allToDos =  this.allToDos.map(toDo =>
+              toDo.id === Do.id 
+              ? {...toDo, task: inputModal.value}
+              : toDo
+          )
+          this.printToDos()
+          myModal.hide()
+      }
+      modal.addEventListener("hidden.bs.modal", () => modal.remove())
     }
-
-
 
     deleteTask(Id){
         this.allToDos= this.allToDos.filter(toDo => Id !== toDo.id)
         this.printToDos()
         }
-
 }
-
 
 export default ToDoApp
